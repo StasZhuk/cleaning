@@ -1,0 +1,47 @@
+-
+    var whyWeList = {
+        '1' : {
+            'icon': 'clean-machine',
+            'title': '4-6 часов',
+            'text': 'среднее время за которое мы убираем квартиру'
+        },
+        '2' : {
+            'icon': 'time',
+            'title': '24 часа',
+            'text': 'Мы можем убрать вашу квартиру или коттедж в любое удобное для вас время'
+        },
+        '3' : {
+            'icon': 'car',
+            'title': 'выезд в день заказа',
+            'text': 'Среднее время прибытия бригады в течении 2 часов'
+        },
+        '4' : {
+            'icon': 'clean-machine',
+            'title': 'любая сложность',
+            'text': 'Мы проводим уборки в квартирах от 30 кв.м. до коттеджей в 3500 кв.м'
+        },
+        '5' : {
+            'icon': 'shield',
+            'title': 'безопасность',
+            'text': 'Мы несем полную ответственность за сохранность вашего имущества во время уборки'
+        },
+        '6' : {
+            'icon': 'experience',
+            'title': 'опыт 7 лет',
+            'text': 'С 2010 в сфере клининга за это время убрано более 700 квартир'
+        },
+    }
+section.section.why-we
+    .container
+        .heading__wrap
+            h2.section__heading.section__heading--M 
+                | Почему стоить доверить уборку
+                br
+                | Вашей квартиры нам?
+        ul.why-we__list.list
+            each item in whyWeList
+                li.list__item
+                    .why-we__item
+                        span(class=`icon-${item.icon}`).why-we__item-icon.icon
+                        span.why-we__item-title= item.title
+                        span.why-we__item-text= item.text

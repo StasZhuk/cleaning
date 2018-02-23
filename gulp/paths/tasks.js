@@ -15,6 +15,7 @@ module.exports = [
   './gulp/tasks/smartgrid',
   './gulp/tasks/change.url',
   './gulp/tasks/js.process',
+  './gulp/tasks/js.copy.js',
   // './gulp/tasks/js.lint'
   './gulp/tasks/js.foundation'
 ];

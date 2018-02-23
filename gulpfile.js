@@ -33,12 +33,13 @@ $.gulp.task('default', $.gulp.series(
     'change:url',
     'js:foundation',
     'js:process',
+    'copy:js',
     // 'webpack',
     'copy:image',
     'copy:font',
     'css:foundation',
     'sprite:svg',
-    'sprite:png'
+    // 'sprite:png'
    
   ),
   $.gulp.parallel(

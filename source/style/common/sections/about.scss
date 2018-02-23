@@ -1,0 +1,17 @@
+.about {
+    background-color: $grey;
+
+    p {
+        font-size: $ts-sh;
+        line-height: 24px;;
+    }
+
+    .btn__wrap {
+        margin-top: 50px;
+    }
+
+    .list__item {
+        width: 50%;
+        padding: 30px;
+    }
+}

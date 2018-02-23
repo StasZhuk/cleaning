@@ -1,0 +1,44 @@
+.socials__wrap {
+    max-width: 90px;
+}
+
+.socials__list {
+    justify-content: space-between;
+}
+
+.socials__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+
+    span {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+.socials__item:nth-child(1) {
+    span {
+        background: url('../img/icons/ok.png') no-repeat center;
+        background-size: contain;
+    }
+}
+.socials__item:nth-child(2) {
+    span {
+        background: url('../img/icons/vk.png') no-repeat center;
+        background-size: contain;
+    }
+}
+.socials__item:nth-child(3) {
+    span {
+        background: url('../img/icons/fb.png') no-repeat center;
+        background-size: contain;
+    }
+}
+
+
+

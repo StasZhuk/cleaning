@@ -1,0 +1,12 @@
+extends ../_template-second
+
+block variables
+  - var title = 'Вопрос-ответ'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/ask-answer/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  include ../common/sections/_ask-answer

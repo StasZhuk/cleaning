@@ -1,21 +1,31 @@
 // fonts
-$main-font: "robotoregular", sans-serif;
+$main-font: "LatoR", sans-serif;
+$LatoL: "LatoL", sans-serif;
+$LatoM: "LatoM", sans-serif;
+$LatoB: "LatoB", sans-serif;
+$PTSR: "PTSansR", sans-serif;
+$PTSB: "PTSansB", sans-serif;
 
 // text-size
-$ts-main: 1.6rem;
-$ts-h1: 10.4rem;
-$ts-h2: 3.2rem;
-$ts-h3: 2.8rem;
+$ts-mh: 3.5rem;
+$ts-sh: 1.8rem;
 
+$ts-small: 1.4rem;
+$ts-main: 1.5rem;
+$ts-normal: 1.6rem;
+$ts-medium: 2.4rem;
 
 // colors
-$acsent: #FF9900;
-$acsent-dark: #404040;
+$acsent-g: #99cc33;
+$acsent-b: #12a7c8;
 $white: #fff;
+$text-dark: #2b2a28;
 $black: #000;
+$grey: #efefef;
 
 // bg colors
 $header-bg: #1f1f1f; 
+$bg-light: #efefef; 
 
 // text-color
 $text-color_main: #474b57;

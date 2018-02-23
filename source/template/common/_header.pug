@@ -1,1 +1,64 @@
+- 
+    var navs = {
+            "navLeft": {
+                "1" : "Уборка квартир",
+                "2" : "Уборка домов",
+                "3" : "Уборка офисов",
+                "4" : "Генеральная уборка",
+                "5" : "Уборка после ремонта",
+                "6" : "Мойка окон",
+                "7" : "Химчистка ковролина",
+                "8" : "Химчистка мягкой мебели",
+                "9" : "Химчистка ковров",
+            },
+            "navRight": {
+                "./pages/examples-work.html" : "Примеры работ",
+                "3" : "Калькулятор",
+                "./pages/contacts.html" : "Контакты",
+                "./pages/articles.html" : "Статьи",
+                "./pages/opinions.html" : "Отзывы",
+                "./pages/ask-answer.html" : "Вопрос-ответ",
+            }
+        }
+
 header.header
+    .nav__wrapper.nav__wrapper--bg
+        .container
+            nav
+                .nav.nav--left.nav__trigger
+                    .nav__label
+                        span Услуги и цены
+                        a.nav-burger.no-animation(href="#")
+                            span
+                            span
+                            span
+                    ul.nav__list.nav__list-trigger
+                        each title, href in navs.navLeft
+                            li.nav__item
+                                a(href=href).nav__link=title
+                .nav.nav--right
+                    ul.nav__list
+                        each title, href in navs.navRight
+                            li.nav__item
+                                a(href=href).nav__link=title
+                    .link-map
+                        span.icon.icon-baloon
+                        a(href="#").underline г. Ярославль
+    .container
+        .header__bottom
+            div(title="Everest-clining").logo-brand.icon.icon-logo
+            .header__services
+                .header__services-item
+                    span.icon.icon-wallet
+                    a(href="#").coast-cleaning.underline Рассчитать стоимость уборки
+                .header__services-item
+                    span.icon.icon-man
+                    a(href="#").call-free.underline Заказать бесплатный звонок
+            .header__contacts
+                .header__contacts-wrapper
+                    a(href="#").call-us Заказать звонок
+                .header__contacts-wrapper
+                    a(href="tel:+7(4852) 60-85-91").phone +7(4852) 60-85-91
+                .header__contacts-wrapper
+                    span.work-time Работаем ежедневно с 9.00 до 22.00  
+

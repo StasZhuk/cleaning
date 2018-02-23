@@ -1,0 +1,27 @@
+.numbers {
+    .list__item {
+        display: flex;
+        width: 25%;
+        justify-content: center;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &-number {
+            font-size: 41px;
+            color: $acsent-b;
+            margin-right: 10px;
+            font-family: $LatoB;
+            padding-top: 5px;
+        }
+
+        &-descr  {
+            color: $text-dark;
+            font-size: 1.5rem;
+            font-family: $LatoM;
+            font-weight: 700;
+        }
+    }
+}

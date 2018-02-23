@@ -1,0 +1,112 @@
+-
+    var opinions = {
+        '1' : {
+            'img': 'opinion-2.jpg',
+            'name': 'Григорьев В. А.',
+            'subtitle': 'Постоянный клиент',
+            'vk': '#',
+            'o': '#',
+            'vk': '#',
+            'title': 'Уборка в квартире после выезда', 
+            'adress': 'г. Ярославль ул. Ленина', 
+            'text': 'Добрый день! Хочется сказать несколько приятные слов о компании ЭверестКлининг. У меня есть квартира, которую я сдаю, и вот там жил одинокий мужчина 3 года, когда он съезжал был большой скандал из-за того в каком состоянии было помещение. Сказать грязно-ничего не сказать. Обратился в данную фирму, ребята справились на “ура”, приехали в тот же день и все отмыли. Теперь убираются и у меня дома!! Спасибо вам.'
+        },
+        '2' : {
+            'img': 'opinion-1.jpg',
+            'name': 'Князева Анастасия',
+            'subtitle': 'Постоянный клиент',
+            'vk': '#',
+            'o': '#',
+            'vk': '#',
+            'title': 'Уборка двухкомнатной квартиры после ремонта', 
+            'adress': 'г. Ярославль, пр-т. Фрунзе', 
+            'text': 'Здравствуйте, у бабушки в квартире делали ремонт ванны комнаты и прихожей (у нее двухкомнатная квартира). Заранее обратились в данную фирму и заказали их работы по окончании стройки. После ремонта в квартиру было невозможно зайти. Хорошо, что мы заранее эту об этом подумали. Приехали уборщики со своим профессиональным оборудованием (специальная техника для уборки строительной пыли и т.д.), убрали все часа за 3-4(у мена наверно ушло бы дня 2). Все счастливы, бабушка получила чистую квартиру с ремонтом!'
+        }
+    }
+
+-
+    var opinions2 = {
+        '1' : {
+            'img': 'opinion-2.jpg',
+            'name': 'Григорьев В. А.',
+            'subtitle': 'Постоянный клиент',
+            'vk': '#',
+            'o': '#',
+            'vk': '#',
+            'title': 'Уборка в квартире после выезда', 
+            'adress': 'г. Ярославль ул. Ленина', 
+            'text': 'Добрый день! Хочется сказать несколько приятные слов о компании ЭверестКлининг. У меня есть квартира, которую я сдаю, и вот там жил одинокий мужчина 3 года, когда он съезжал был большой скандал из-за того в каком состоянии было помещение. Сказать грязно-ничего не сказать. Обратился в данную фирму, ребята справились на “ура”, приехали в тот же день и все отмыли. Теперь убираются и у меня дома!! Спасибо вам.'
+        },
+        '2' : {
+            'img': 'opinion-1.jpg',
+            'name': 'Князева Анастасия',
+            'subtitle': 'Постоянный клиент',
+            'vk': '#',
+            'o': '#',
+            'vk': '#',
+            'title': 'Уборка двухкомнатной квартиры после ремонта', 
+            'adress': 'г. Ярославль, пр-т. Фрунзе', 
+            'text': 'Здравствуйте, у бабушки в квартире делали ремонт ванны комнаты и прихожей (у нее двухкомнатная квартира). Заранее обратились в данную фирму и заказали их работы по окончании стройки. После ремонта в квартиру было невозможно зайти. Хорошо, что мы заранее эту об этом подумали. Приехали уборщики со своим профессиональным оборудованием (специальная техника для уборки строительной пыли и т.д.), убрали все часа за 3-4(у мена наверно ушло бы дня 2). Все счастливы, бабушка получила чистую квартиру с ремонтом!'
+        }
+    }
+
+section.section.opinions
+    .container
+        .heading__wrap
+            h2.section__heading.section__heading--dark 
+                | Отзывы клиентов
+        .list__wrap
+            ul.opinions__list.list
+                each item in opinions
+                    li.list__item
+                        .opinions-item
+                            .opinions-user
+                                img(src=`./assets/img/opinions/${item.img}`).opinions-user__img
+                                span.opinions-user__name= item.name
+                                span.opinions-user__subtitle= item.subtitle
+                                .socials__wrap
+                                    ul.list.socials__list
+                                        li.socials__item
+                                            a(href=item.o).socials__link
+                                                span.icon.icon-ok
+                                        li.socials__item
+                                            a(href=item.vk).socials__link
+                                                span.icon.icon-vk
+                                        li.socials__item
+                                            a(href=item.fb).socials__link
+                                                span.icon.icon-fb
+                            .opinions-descr
+                                p.opinions-descr__title= item.title
+                                .opinions-descr__adress
+                                    span.icon.icon-baloon-b
+                                    span= item.adress
+                                p.opinions-descr__text= item.text
+            .list__trigger
+                ul.opinions__list.list.list--hidden
+                    each item in opinions2
+                        li.list__item
+                            .opinions-item
+                                .opinions-user
+                                    img(src=`./assets/img/opinions/${item.img}`).opinions-user__img
+                                    span.opinions-user__name= item.name
+                                    span.opinions-user__subtitle= item.subtitle
+                                    .socials__wrap
+                                        ul.list.socials__list
+                                            li.socials__item
+                                                a(href=item.o).socials__link
+                                                    span.icon.icon-ok
+                                            li.socials__item
+                                                a(href=item.vk).socials__link
+                                                    span.icon.icon-vk
+                                            li.socials__item
+                                                a(href=item.fb).socials__link
+                                                    span.icon.icon-fb
+                                .opinions-descr
+                                    p.opinions-descr__title= item.title
+                                    .opinions-descr__adress
+                                        span.icon.icon-baloon-b
+                                        span= item.adress
+                                    p.opinions-descr__text= item.text
+            .btn__wrap.btn__wrap--center
+                a(href="#" data-btn-text="Показать больше отзывов").btn__trigger.btn.btn--blue Показать больше отзывов
+        include ../modules/_slider

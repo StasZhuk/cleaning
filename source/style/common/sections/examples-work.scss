@@ -1,0 +1,79 @@
+.examples-work {
+    background-color: $bg-light;
+    
+    .section__heading {
+        font-family: $main-font;
+        font-weight: normal;
+        margin-bottom: 40px;
+    }
+
+    .photo__img {
+        height: 260px;
+        width: 335px;
+        flex-basis: 335px;
+        background: no-repeat center;
+        background-size: cover;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .photo__item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .photo__list {
+        max-width: 1040px;
+        height: 780px;
+        margin: 0 auto;
+    }
+
+    .photo__wrap {
+        margin-bottom: 90px;
+    }
+
+    .btn__wrap {
+        margin-bottom: 30px;
+    }
+
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+
+        .slick-active {
+
+            button {
+                color: $acsent-b;
+            }
+        }
+
+        li {
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            font-size: $ts-sh;
+            color: $text-color_main;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: 0.3s background-color;
+
+            &:hover {
+                background-color: #ebebeb;
+            }
+        }
+    }
+
+    .text {
+        text-align: center;
+        color: $text-color_main;
+        margin-bottom: 30px;
+    }
+}

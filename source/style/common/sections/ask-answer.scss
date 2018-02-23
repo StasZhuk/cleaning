@@ -1,0 +1,50 @@
+.ask-answer {
+    background-color: $grey;
+    .heading__wrap {
+        margin-bottom: 50px;
+    }
+
+    .content__wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+
+    .section__subheading {
+        margin-bottom: 25px;
+        display: inline-block;
+
+        &--dashed {
+            border-bottom: 1px dashed $acsent-b;
+        }
+    }
+
+    p {
+        font-size: 20px;
+        color: $text-color_main;
+        line-height: 1.5;
+        margin-bottom: 50px;
+    }
+
+    a { 
+        display: inline-block;
+        color: $acsent-b;
+        padding: 0 5px;
+    }
+}
+
+
+.accordion {
+    &__content {
+        display: none;
+    }
+
+    &__title {
+        border-bottom: 1px dashed $acsent-b;
+        cursor: pointer;
+
+        &.active {
+            border-bottom: none;
+        }
+    }
+}

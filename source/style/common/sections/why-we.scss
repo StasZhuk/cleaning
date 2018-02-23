@@ -1,0 +1,66 @@
+.why-we {
+    padding: 65px 0;
+
+    .heading__wrap {
+        margin-bottom: 50px;
+    }
+
+    .list__item {
+        width: 33.33%;
+        text-align: center;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 230px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        text-align: center;
+
+        &-icon {
+            margin-bottom: 15px;
+        }
+
+        &-title {
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: $ts-sh;
+            font-family: $PTSB;
+            color: #000;
+            font-weight: bold;
+        }
+
+        &-text {
+            font-size: $ts-small;
+            line-height: 1.6rem;
+        }
+    }
+}
+
+.why-we__item-icon {
+    display: block;
+    width: 59px;
+    height: 59px;
+    background: no-repeat center;
+} 
+
+.why-we__list .list__item:nth-child(1) .why-we__item-icon {
+    background-image: url('../img/why-we/clean-machine.png');
+}
+.why-we__list .list__item:nth-child(2) .why-we__item-icon {
+    background-image: url('../img/why-we/time.png');
+}
+.why-we__list .list__item:nth-child(3) .why-we__item-icon {
+    background-image: url('../img/why-we/car.png');
+}
+.why-we__list .list__item:nth-child(4) .why-we__item-icon {
+    background-image: url('../img/why-we/clean-machine.png');
+}
+.why-we__list .list__item:nth-child(5) .why-we__item-icon {
+    background-image: url('../img/why-we/shield.png');
+}
+.why-we__list .list__item:nth-child(6) .why-we__item-icon {
+    background-image: url('../img/why-we/experience.png');
+}

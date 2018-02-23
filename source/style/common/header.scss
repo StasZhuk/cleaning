@@ -1,0 +1,90 @@
+.header {
+    color: $acsent-b;
+    background-color: #fff;
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+
+        a {
+            color: $acsent-b;
+        }
+    }
+
+    &__services {
+        display: flex;
+        flex-direction: column;
+    }
+    &__services-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: $ts-sh;
+        font-weight: bold;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+
+        &-wrapper {
+            text-align: right;
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+a.call-us {
+    color: $acsent-g;
+    border-bottom: 1px solid $acsent-g;
+    font-size: $ts-main;
+    font-family: $LatoM;
+    font-weight: bold;
+
+    &:hover {
+        border-bottom-color: transparent;
+    }
+}
+
+.work-time {
+    color: #747474;
+    font-size: $ts-main;
+}
+
+.phone {
+    font-size: 2.5rem;
+    font-family: $LatoB;
+}
+
+.icon-wallet {
+    width: $ts-medium;
+    height: 25px;
+    background-image: url('../img/icons/wallet.png');
+}
+
+.icon-man {
+    width: 25px;
+    height: 25px;
+    background-image: url('../img/icons/man.png');
+}
+
+.icon-logo {
+    width: 144px;
+    height: 84px;
+    background-image: url('../img/logo.png');
+    cursor: pointer;
+}
