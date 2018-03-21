@@ -1,0 +1,17 @@
+extends ../_template-dry-cleaning-carpet
+
+block variables
+  - var title = 'Химчистка ковров'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/cleaning/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  +hero-cleaning(hero.carpet, 'carpet') 
+//-   +whyWe(whyWe.carpet)
+//-   +opinions(opinions.carpet)
+//-   +slider(slider.carpet, 'carpet')
+//-   include ./dry-cleaning-carpet/_cleaning
+//-   include ../common/sections/_numbers

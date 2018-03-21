@@ -5,8 +5,8 @@ doctype html
 html(lang="ru-RU")
   include common/_generals
 
-  body
-      include ./common/_header
+  body(class= pageClass)
+      +header('./services/', './pages/', nav)
       
       //- основной контент
       block content

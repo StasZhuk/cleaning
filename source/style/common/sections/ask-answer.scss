@@ -1,4 +1,12 @@
 .ask-answer {
+    &.ask-answer--light {
+        background-color: #fff;
+
+        .content__wrap {
+            margin-bottom: 0;
+        }
+    }
+
     background-color: $grey;
     .heading__wrap {
         margin-bottom: 50px;
@@ -44,7 +52,11 @@
         cursor: pointer;
 
         &.active {
-            border-bottom: none;
+            border-bottom-color: transparent;
+        }
+
+        &:hover {
+            border-bottom-color: transparent;
         }
     }
 }

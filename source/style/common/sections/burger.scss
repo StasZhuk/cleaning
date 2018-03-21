@@ -9,6 +9,11 @@
     padding: 10px;
     margin-top: -1px;
 
+    @include laptop() {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     span {
         display: block;
         width: 100%;
@@ -56,20 +61,20 @@
     }
 
     50% {
-        transform: translateY(7.5px) rotate(0deg);
+        transform: translateY(8px) rotate(0deg);
     }
 
     100% {
-        transform: translateY(7.5px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
     }
 }
 @keyframes navBtnCloseTop {
     0% {
-        transform: translateY(7.5px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
     }
 
     50% {
-        transform: translateY(7.5px) rotate(0deg);
+        transform: translateY(8px) rotate(0deg);
     }
 
     100% {
@@ -84,20 +89,20 @@
     }
 
     50% {
-        transform: translateY(-7.5px) rotate(0deg);
+        transform: translateY(-8px) rotate(0deg);
     }
 
     100% {
-        transform: translateY(-7.5px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 @keyframes navBtnCloseBottom {
     0% {
-        transform: translateY(-7.5px) rotate(-45deg);        
+        transform: translateY(-8px) rotate(-45deg);        
     }
 
     50% {
-        transform: translateY(-7.5px) rotate(0deg);
+        transform: translateY(-8px) rotate(0deg);
     }
 
     100% {

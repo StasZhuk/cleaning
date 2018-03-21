@@ -13,7 +13,278 @@ mixin nav (className, items, activeItem)
                                 span(class=`${className}__list-noactive`)= title
 
 //- icon SVG mixin
-mixin icon(name, mod)
+mixin icon(name, mod, path)
     - mod = mod || ''
     svg(class="icon icon-" + name + ' ' + mod)
-        use(xlink:href="/assets/img/sprite/sprite.svg#" + name)
+        use(xlink:href= path + "assets/img/sprite/sprite.svg#" + name)
+
+//- header menu mixin
+mixin header (pathLeft, pathRight, navs, activeItem, sub)
+    header.header
+        #nav-overlay
+        .nav__wrapper.nav__wrapper--bg
+            .container
+                nav
+                    .nav.nav--left.nav__trigger
+                        .nav__label
+                            span.laptop-trigger-hide Услуги и цены
+                            a.nav-burger.no-animation(href="javascript:void(0)")
+                                span
+                                span
+                                span
+                        .nav__list-wrap.nav__list-trigger
+                            .laptop-trigger
+                            ul.nav__list.nav__list--left
+                                each title, href in navs.navLeft
+                                    if (title === activeItem)
+                                        li.nav__item
+                                            span.nav__link.active= title
+                                    else
+                                        li.nav__item
+                                            a(href= pathLeft + href).nav__link
+                                                span= title
+                            ul.nav__list.laptop-trigger
+                                each title, href in navs.navRight
+                                    li.nav__item.nav__item--blue
+                                        a(href=  pathRight + href).nav__link
+                                            span= title
+                    .nav.nav--right
+                        ul.nav__list.laptop-trigger-hide
+                            each title, href in navs.navRight
+                                li.nav__item
+                                    a(href=  pathRight + href).nav__link
+                                        span= title
+                        .link-map.desktop-trigger-hide
+                            if sub
+                                +icon('baloon','icon-baloon--white', '../')
+                            else    
+                                +icon('baloon','icon-baloon--white', './')
+                            a(href="javascript:void(0)").underline г. Ярославль
+                        .header__contacts.laptop-trigger.laptop-trigger--flex
+                            .header__contacts-wrapper.phone-trigger-hide
+                                a(href="javascript:void(0)").call-us Заказать звонок
+                            .header__contacts-wrapper
+                                if sub
+                                    +icon('phone-24', 'icon-phone-24--white', '../')
+                                else
+                                    +icon('phone-24', 'icon-phone-24--white', './')
+                                a(href="tel:+74852608591").phone +7 (4852) 60-85-91
+        .container
+            .header__bottom
+                .logo-brand__wrap
+                    a(href="../index.html" title="Everest-clining").logo-brand.icon.icon-logo
+                .link-map.phone-trigger
+                    if sub
+                        +icon('baloon','icon-baloon--blue', '../')
+                    else
+                        +icon('baloon','icon-baloon--blue', './')
+                    a(href="javascript:void(0)").underline г. Ярославль
+                .header__services
+                    .header__services-item
+                        span.icon.icon-wallet
+                        a(href="javascript:void(0)").coast-cleaning.underline Рассчитать стоимость уборки
+                    .header__services-item
+                        span.icon.icon-man
+                        a(href="javascript:void(0)").call-free.underline Заказать бесплатный звонок
+                .header__contacts
+                    .header__contacts-wrapper.laptop-trigger-hide
+                        a(href="javascript:void(0)").call-us Заказать звонок
+                    .header__contacts-wrapper.laptop-trigger-hide
+                        a(href="tel:+7(4852) 60-85-91").phone +7(4852) 60-85-91
+                    .header__contacts-wrapper
+                        span.work-time Работаем ежедневно с 9.00 до 22.00  
+
+//- hero cleaning
+mixin hero-cleaning (hero, heroClassMod)
+    section(class= `hero-cleaning--${heroClassMod}`).section.hero-cleaning
+        img(src= hero.imgSrc hero.imgSrc).hero-cleaning__bg
+        .container
+            .heading__wrap.align-center
+                h1.main-heading.main-heading--white.heading-bg.heading-bg--blue.inline-block
+                    span= hero.title
+            .hero-cleaning__descr-wrap.align-center
+                h4.hero-cleaning__descr.heading-bg.heading-bg--black.inline-block
+                    span 
+                        | Проведем уборку по ГОСТу экологичными средствами за 6 часов.
+                        br
+                        | Гарантия чистоты 100%! 
+            .btn__wrap--center
+                a(href="javascript:void(0)").btn.btn--green Оставить заявку
+
+//- tabs
+mixin tabs (tabs)
+    section.section.section--grey.section__tabs
+        .container
+            .tabs.tabs-appartments
+                .heading__wrap
+                    h2.section__heading.section__heading--blue= tabs.title
+                .tabs
+                    input#tab_1(type="radio" name="tab" checked="checked") 
+                    input#tab_2(type="radio" name="tab") 
+                    input#tab_3(type="radio" name="tab") 
+                    .tabs__nav
+                        label(for="tab_1" id="tab_l1") Уборка стандарт
+                        label(for="tab_2" id="tab_l2") Генеральная уборка
+                        label(for="tab_3" id="tab_l3") Уборка после ремонта
+                    .tabs_cont
+                        each item in tabs.content
+                            div(id= "tab_c" + item.number).tab
+                                .tabs__left
+                                    div(class= `tabs__img--${tabs.imgClass}`).tabs__img
+                                .tabs__right
+                                    .tabs__heading= item.title
+                                    .tabs__subheading= item.subtitle1
+                                    ul.tabs__items-list
+                                        each p1 in item.subtitleText1
+                                            li.tabs__items-item
+                                                span.list__dot.list__dot--green
+                                                p.tabs__text= p1
+                                    .tabs__subheading= item.subtitle2
+                                    ul.tabs__items-list
+                                        each p2 in item.subtitleText2
+                                            li.tabs__items-item
+                                                span.list__dot.list__dot--green
+                                                p.tabs__text= p2
+
+
+//- coast cleaning
+mixin coast (coast, paddingTop)
+    section(class= `section__coast--${paddingTop}`).section.section__coast.section--grey
+        .container
+            .heading__wrap
+                h2.section__heading.section__heading--blue= coast.title
+            if coast.size === "small"
+                .table-coast__wrap.table-coast__wrap--small
+                    .table-coast.table-coast-small
+                        .table-coast__heading
+                            each item in coast.heading
+                                .cell.table-coast__heading-cell
+                                    span= item
+                        .table-coast__body
+                            .table-coast__body-row
+                                each item in coast.coast
+                                    .cell.table-coast__body-cell
+                                        span= item
+                            .table-coast__body-row.laptop-trigger-hide
+                                each item in coast.workers
+                                    .cell.table-coast__body-cell
+                                        span= item
+                            .table-coast__body-row.laptop-trigger-hide
+                                each item in coast.time
+                                    .cell.table-coast__body-cell
+                                        span= item
+            else
+                .table-coast__wraps
+                    .table-coast
+                        .table-coast__heading
+                            each item in coast.heading
+                                .cell.table-coast__heading-cell
+                                    span= item
+                        .table-coast__body
+                            .table-coast__body-row
+                                each item in coast.coast
+                                    .cell.table-coast__body-cell
+                                        span= item
+                            .table-coast__body-row.laptop-trigger-hide
+                                each item in coast.workers
+                                    .cell.table-coast__body-cell
+                                        span= item
+                            .table-coast__body-row.laptop-trigger-hide
+                                each item in coast.time
+                                    .cell.table-coast__body-cell
+                                        span= item
+                    if coast.warning
+                        p.table__warning= coast.warning
+
+            .text.text--big.align-center ОСТАВЬТЕ ЗАЯВКУ И ПОЛУЧИТЕ КОНСУЛЬТАЦИЮ ПО УБОРКЕ ВАШЕЙ КВАРТИРЫ
+            .btn__wrap--center
+                a(href="javascript:void(0)").btn.btn--green Оставить заявку
+
+
+//- opinions
+mixin opinions (opinions)
+    section.section.section.opinions
+        .container
+            .heading__wrap
+                h2.section__heading.section__heading--dark 
+                    | Отзывы клиентов
+            .list__wrap
+                ul.opinions__list.list
+                    each item in opinions.opinionsDisplay
+                        li.list__item
+                            .opinions-item
+                                .opinions-user
+                                    img(src= item.img).opinions-user__img
+                                    span.opinions-user__name= item.name
+                                    span.opinions-user__subtitle= item.subtitle
+                                    .socials__wrap
+                                        ul.list.socials__list
+                                            li.socials__item
+                                                a(href=item.o).socials__link
+                                                    span.icon.icon-ok
+                                            li.socials__item
+                                                a(href=item.vk).socials__link
+                                                    span.icon.icon-vk
+                                            li.socials__item
+                                                a(href=item.fb).socials__link
+                                                    span.icon.icon-fb
+                                .opinions-descr
+                                    p.opinions-descr__title= item.title
+                                    .opinions-descr__adress
+                                        span.icon.icon-baloon-b
+                                        span= item.adress
+                                    p.opinions-descr__text= item.text
+                .list__trigger
+                    ul.opinions__list.list.list--hidden
+                        each item in opinions.opinionsAll
+                            li.list__item
+                                .opinions-item
+                                    .opinions-user
+                                        img(src= item.img).opinions-user__img
+                                        span.opinions-user__name= item.name
+                                        span.opinions-user__subtitle= item.subtitle
+                                        .socials__wrap
+                                            ul.list.socials__list
+                                                li.socials__item
+                                                    a(href=item.o).socials__link
+                                                        span.icon.icon-ok
+                                                li.socials__item
+                                                    a(href=item.vk).socials__link
+                                                        span.icon.icon-vk
+                                                li.socials__item
+                                                    a(href=item.fb).socials__link
+                                                        span.icon.icon-fb
+                                    .opinions-descr
+                                        p.opinions-descr__title= item.title
+                                        .opinions-descr__adress
+                                            span.icon.icon-baloon-b
+                                            span= item.adress
+                                        p.opinions-descr__text= item.text
+                .btn__wrap.btn__wrap--center
+                    a(href="#" data-btn-text="Показать больше отзывов").btn__trigger.btn.btn--blue Показать больше отзывов
+
+
+//- slider
+mixin slider (slider, pageClass)
+    section(class= `slider-section--${pageClass}`).section.section-slider
+        .container
+            .slider.slider-index
+                each item in slider
+                    div
+                        img(src= item).slider-img 
+
+//- whyWe
+mixin whyWe (whyWe)
+    section.section.why-we
+        .container
+            .heading__wrap
+                h2.section__heading.section__heading--M
+                    each title in whyWe.title 
+                        span= title
+            ul.why-we__list.list
+                each item in whyWe.whyWeList
+                    li.list__item
+                        .why-we__item
+                            span(class=`icon-${item.icon}`).why-we__item-icon.icon
+                            span.why-we__item-title= item.title
+                            span.why-we__item-text= item.text

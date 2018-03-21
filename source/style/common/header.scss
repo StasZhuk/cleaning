@@ -1,4 +1,6 @@
 .header {
+    position: relative;
+    z-index: 100;
     color: $acsent-b;
     background-color: #fff;
 
@@ -11,18 +13,76 @@
         a {
             color: $acsent-b;
         }
+
+        @include laptop() {
+            flex-wrap: wrap;
+            padding-top: 30px;
+            padding-bottom: 20px;
+
+            .logo-brand__wrap {
+                width: 50%;
+                padding-left: 50px;
+            }
+
+            .header__contacts {
+                justify-content: center;
+            }
+    
+            .header__contacts-wrapper {
+                padding: 40px 10px 10px;
+            }
+        }
+
+        @include phone() {
+            justify-content: center;
+
+            .logo-brand__wrap {
+                width: initial;
+                padding-left: 0;
+
+                .icon {
+                    margin-right: 0;
+                }
+            }
+
+            .header__services,
+            .header__contacts {
+                width: 100%;
+                padding-left: 0;
+            }
+
+            .header__contacts-wrapper {
+                padding: 40px 0 20px;
+            }
+
+            .header__services-item {
+                justify-content: center;
+            }
+        }
     }
+
+
 
     &__services {
         display: flex;
         flex-direction: column;
+
+        @include laptop() {
+            width: 50%;
+            padding-left: 20px;
+        }
     }
+
     &__services-item {
         display: flex;
         align-items: center;
         margin-bottom: 20px;
         font-size: $ts-sh;
         font-weight: bold;
+
+        @include laptop() {
+            font-size: 1.6rem;
+        }
 
         &:last-child {
             margin-bottom: 0;
@@ -37,6 +97,18 @@
         display: flex;
         flex-direction: column;
 
+        
+        @include laptop {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        @include phone {
+            justify-content: flex-end;
+        }
+
         &-wrapper {
             text-align: right;
             margin-bottom: 15px;
@@ -44,13 +116,24 @@
             &:last-child {
                 margin-bottom: 0;
             }
+
+            @include laptop() {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0;
+
+                a {
+                    color: #fff;
+                }
+            }
         }
     }
 }
 
 a.call-us {
     color: $acsent-g;
-    border-bottom: 1px solid $acsent-g;
+    border-bottom: 1px solid;
+    border-bottom-color: inherit;
     font-size: $ts-main;
     font-family: $LatoM;
     font-weight: bold;
@@ -63,11 +146,23 @@ a.call-us {
 .work-time {
     color: #747474;
     font-size: $ts-main;
+
+    @include phone() {
+        text-align: center;
+        line-height: 1.4;
+    }
 }
 
 .phone {
     font-size: 2.5rem;
     font-family: $LatoB;
+
+    @include laptop() {
+        font-size: 2.2rem;
+    }
+    @include phone() {
+        font-size: 2rem;
+    }
 }
 
 .icon-wallet {
@@ -87,4 +182,18 @@ a.call-us {
     height: 84px;
     background-image: url('../img/logo.png');
     cursor: pointer;
+}
+
+#nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(#000, 0.5);
+
+    &.active {
+        display: block;
+    }
 }

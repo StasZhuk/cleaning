@@ -1,0 +1,203 @@
+- 
+    var selects = {
+        "selectLeft" : {
+            "1" : {
+                "label" : "Мытье окон",
+                "active" : "3",
+                "units" : "шт.",
+                "option" : {
+                    "1" : "1",
+                    "2" : "2",
+                    "3" : "3"
+                }
+            },
+            "2" : {
+                "label" : "Глажка белья",
+                "active" : "Нет",
+                "units" : "",
+                "option" : {
+                    "1" : "Да",
+                    "2" : "Нет",
+                }
+            },
+            "3" : {
+                "label" : "Мытье дух. шкафов",
+                "active" : "3",
+                "units" : "шт.",
+                "option" : {
+                    "1" : "1",
+                    "2" : "2",
+                    "3" : "3"
+                }
+            },
+            "4" : {
+                "label" : "Мытье жалюзи",
+                "active" : "Нет",
+                "units" : "",
+                "option" : {
+                    "1" : "Да",
+                    "2" : "Нет",
+                }
+            },
+            "5" : {
+                "label" : "Мытье посуды",
+                "active" : "Нет",
+                "units" : "",
+                "option" : {
+                    "1" : "Да",
+                    "2" : "Нет",
+                }
+            },
+            "6" : {
+                "label" : "Мытье люстр",
+                "active" : "3",
+                "units" : "шт.",
+                "option" : {
+                    "1" : "1",
+                    "2" : "2",
+                    "3" : "3"
+                }
+            },
+        },
+        "selectRight" : {
+            "1" : {
+                "label" : "Уборка доп. Санузлов",
+                "active" : "Нет",
+                "units" : "",
+                "option" : {
+                    "1" : "Да",
+                    "2" : "Нет",
+                }
+            },
+            "2" : {
+                "label" : "Дополнительные сотрудники",
+                "active" : "2",
+                "units" : "чел.",
+                "option" : {
+                    "1" : "1",
+                    "2" : "2",
+                    "3" : "3",
+                }
+            },
+            "3" : {
+                "label" : "Уборка лоджии/балкона",
+                "active" : "3",
+                "units" : "шт.",
+                "option" : {
+                    "1" : "1",
+                    "2" : "2",
+                    "3" : "3"
+                }
+            },
+            "4" : {
+                "label" : "Развеска/глажкаор",
+                "active" : "2",
+                "units" : "часа",
+                "option" : {
+                    "1" : "1",
+                    "2" : "2",
+                    "3" : "3"
+                }
+            },
+            "5" : {
+                "label" : "Мытье холодильника",
+                "active" : "3",
+                "units" : "шт.",
+                "option" : {
+                    "1" : "1",
+                    "2" : "2",
+                    "3" : "3"
+                }
+            },
+        }
+    }
+
+section.section.calculations
+    .container
+        .content__wrap.align-center
+            .heading__wrap
+                h2.section__heading.section__heading--blue
+                    | Калькулятор стоимости
+            .calculator
+                form.form.calculator__form
+                    .calculator__container
+                        .calculator__row
+                            .select__wrap.select__wrap--big
+                                span.select__label
+                                select(data-placeholder="Тип помещения").select
+                                    option(selected value="")
+                                    option(value="комната") комната
+                                    option(value="квартира") квартира    
+                                    option(value="оффис") оффис
+                            .select__wrap.select__wrap--big
+                                span.select__label
+                                select(data-placeholder="Тип уборки").select.select-cleaning-type
+                                    option(selected value="")
+                                    option(value="полная") полная
+                                    option(value="стандарт") стандарт
+                                    option(value="генеральная") генеральная
+                        .calculator__row
+                            .calculator__row-wrap.calculator__row-wrap--slider
+                                .input__wrap.input__wrap--text
+                                    label(for="slider-metres") Квадратные метры:
+                                    input(id="slider-metres" type="text" value="30").input.input--text
+                                .form-slider__wrap   
+                                    span.form-slider__min 
+                                        | 30 м
+                                        sup
+                                            | 2
+                                    span.form-slider__max
+                                        | 300 м
+                                        sup
+                                            | 2
+                                    .form-slider-metres.form-slider
+                        .calculator__row
+                            .calculator__row-wrap.calculator__row-wrap--slider
+                                .input__wrap.input__wrap--text
+                                    label(for="slider-rooms") Количество комнат:
+                                    input(id="slider-rooms" type="text" value="1").input.input--text
+                                .form-slider__wrap   
+                                    span.form-slider__min 
+                                        | 1
+                                    span.form-slider__max
+                                        | 10
+                                    .form-slider-rooms.form-slider
+                        .calculator__row
+                            .calculator__row-wrap.calculator__row-wrap--group
+                                .select__wrap-heading 
+                                    span Дополнитеьные услуги
+                                .select__wrap-group.select__wrap-group--left
+                                    each select in selects.selectLeft
+                                        .select__wrap-content
+                                            .select__wrap-label
+                                                span= select.label
+                                            .select__wrap.select__wrap--small
+                                                span.select__label
+                                                select.select
+                                                    each option in select.option
+                                                        if select.active === option
+                                                            option(value= option selected)= option + ' ' + select.units 
+                                                        else
+                                                            option(value= option)= option + ' ' + select.units 
+                                .select__wrap-group.select__wrap-group--right
+                                    each select in selects.selectRight
+                                        .select__wrap-content
+                                            .select__wrap-label
+                                                span= select.label
+                                            .select__wrap.select__wrap--small
+                                                span.select__label
+                                                select.select
+                                                    each option in select.option
+                                                        if select.active === option
+                                                            option(value= option selected)= option + ' ' + select.units 
+                                                        else
+                                                            option(value= option)= option + ' ' + select.units
+                    .calculator__result-wrap
+                        .calculator__result-block
+                            p.text Ориентировочная стоимость уборки составит
+                            .calculator__result 3500 руб.
+                        .btn__wrap.align--right
+                            a(href="javascript:void(0)").btn.btn--green Заказать уборку
+                            
+
+                            

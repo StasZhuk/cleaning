@@ -1,13 +1,36 @@
 .numbers {
+    .list {
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include phone() {
+            padding-top: 20px;
+        }
+    }
+
     .list__item {
         display: flex;
         width: 25%;
         justify-content: center;
+        flex-basis: 250px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        @include phone() {
+            width: 50%;
+            flex-basis: 200px;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
     }
 
     &__item {
         display: flex;
         align-items: center;
+
+        @include phone() {
+            flex-direction: column;
+        }
 
         &-number {
             font-size: 41px;
@@ -15,6 +38,11 @@
             margin-right: 10px;
             font-family: $LatoB;
             padding-top: 5px;
+
+            @include phone() {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
         }
 
         &-descr  {
@@ -22,6 +50,11 @@
             font-size: 1.5rem;
             font-family: $LatoM;
             font-weight: 700;
+            line-height: 1.2;
+
+            @include phone() {
+                text-align: center;
+            }
         }
     }
 }

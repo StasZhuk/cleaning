@@ -10,6 +10,13 @@
         align-items: center;
     }
 
+    .slick-track,
+    .slick-slide {
+        &:focus {
+            outline: none;
+        }
+    }
+
     .slick-dots {
         display: flex;
         justify-content: center;
@@ -49,6 +56,11 @@
     display: flex;
     margin-bottom: 90px;
 
+    @include xsm() {
+        flex-direction: column;
+        justify-content: center;
+    }
+
     &__img {
         display: block;
         height: 240px;
@@ -58,6 +70,20 @@
         background: no-repeat;
         background-size: cover;
         border-radius: 5px;
+
+        @include laptop() {
+            margin-right: 20px;
+        }
+
+        @include phone() {
+            width: 195px;
+            min-width: 195px;
+        }
+
+        @include xsm() {
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
 
     &__title {
@@ -70,6 +96,12 @@
         font-family: $LatoL, sans-serif;
         margin-bottom: 20px;
         line-height: 1.2;
+
+        @include laptop() {
+            max-height: 135px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 
     &__link {

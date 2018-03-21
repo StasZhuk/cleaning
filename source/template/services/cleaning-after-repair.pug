@@ -1,0 +1,19 @@
+extends ../_template-cleaning-after-repair
+
+block variables
+  - var title = 'Уборка после ремонта'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/after-repair/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  +hero-cleaning(hero.repair, 'repair') 
+  +tabs(tabs.repair) 
+  include ./after-repair-cleaning/_questions
+  include ../common/sections/_call-now
+  +whyWe(whyWe.repair)
+  +slider(slider.repair, 'repair')
+  include ./after-repair-cleaning/_cleaning
+  include ../common/sections/_numbers

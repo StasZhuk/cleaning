@@ -7,17 +7,23 @@
     }
 
     .list {
-        justify-content: space-between;
+        justify-content: space-around;
+
+        @include laptop() {
+            justify-content: space-around;
+        }
     }
 
     .list__item {
         position: relative;
         width: 334px;
+        flex-basis: 334px;
+        padding: 0 20px;
     }
 
     &-item {
         position: relative;
-        width: 334px;
+        width: 100%;
         margin-bottom: 50px;
         transition: 0.3s transform, 0.3s box-shadow;
         cursor: pointer;
@@ -68,9 +74,18 @@
         color: #2b2a28;
         font-size: $ts-sh;
         margin-bottom: 25px;
+        line-height: 1.2;
 
         &__wrapper {
             margin-bottom: 20px;
+        }
+
+        @include phone() {
+            font-weight: bold;
+
+            &__wrapper {
+                margin-bottom: 30px;
+            }
         }
     }
 

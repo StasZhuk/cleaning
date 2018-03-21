@@ -13,13 +13,18 @@
         @content;
     }
 }
+@mixin phone-m() {
+    @media screen and (max-width: 600px) {
+        @content;
+    }
+}
 @mixin phone() {
     @media screen and (max-width: 480px) {
         @content;
     }
 }
 @mixin xsm() {
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 400px) {
         @content;
     }
 }

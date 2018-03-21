@@ -1,0 +1,19 @@
+extends ../_template-cleaning-offices
+
+block variables
+  - var title = 'Уборка офисов'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/cleaning/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  +hero-cleaning(hero.offices, 'offices') 
+  +tabs(tabs.offices) 
+  +coast(coast.offices)
+  +whyWe(whyWe.offices)
+  +opinions(opinions.offices)
+  +slider(slider.offices, 'offices')
+  include ./offices-cleaning/_cleaning
+  include ../common/sections/_numbers

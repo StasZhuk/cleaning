@@ -33,6 +33,9 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "jquery": "~3.2.1",
+    "jquery-form-styler": "^2.0.1",
+    "jquery-ui-slider": "^1.12.1",
+    "jquery.maskedinput": "^1.4.1",
     "magnific-popup": "^1.1.0",
     "normalize.css": "~7.0.0",
     "slick-carousel": "^1.8.1",

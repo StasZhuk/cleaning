@@ -1,0 +1,18 @@
+extends ../_template-windows-washing
+
+block variables
+  - var title = 'Мойка окон'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/cleaning/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  +hero-cleaning(hero.windows, 'windows') 
+  //-   +coast(coast.window)
+  +whyWe(whyWe.windows)
+  +opinions(opinions.windows)
+  +slider(slider.windows, 'windows')
+  include ./windows-washing/_cleaning
+  include ../common/sections/_numbers

@@ -1,0 +1,19 @@
+extends ../_template-cleaning-homes
+
+block variables
+  - var title = 'Уборка домов'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/cleaning/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  +hero-cleaning(hero.homes, 'homes') 
+  +tabs(tabs.homes) 
+  +coast(coast.homes)
+  +whyWe(whyWe.homes)
+  +opinions(opinions.homes)
+  +slider(slider.homes, 'homes')
+  include ./homes-cleaning/_cleaning
+  include ../common/sections/_numbers

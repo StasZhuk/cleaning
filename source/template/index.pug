@@ -1,16 +1,18 @@
 extends _template
  
 block variables
+    - var pageClass= 'page-index'
     - var title= 'Everest-Cleaning'
     - var app_js= './assets/js/app.js' 
     - var foundation_js= './assets/js/foundation.js'
-    - var customScript= '../assets/js/index/index.js'  
+    - var customScript= './assets/js/index/index.js'  
     - var app_css= './assets/css/app.css' 
     - var foundation_css= './assets/css/foundation.css' 
 
 block content
     include ./common/sections/_hero
     include ./common/sections/_why-we
-    include ./common/sections/_opinions
+    +opinions(opinions.index)
+    +slider(slider.index, 'index')
     include ./common/sections/_about
     include ./common/sections/_numbers

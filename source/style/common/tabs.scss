@@ -1,0 +1,177 @@
+.section__tabs {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.tabs {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+	margin: 0 auto;
+
+    .section__heading {
+        margin-bottom: 50px;
+    }
+
+    &__nav {
+        max-width: 870px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        @include phone() {
+            flex-direction: column;
+            max-width: 380px;
+            margin-bottom: 30px;
+        }
+    }
+
+    & label {
+        flex:1;
+        color: $acsent-b;
+        cursor: pointer;
+        display: block;
+        height: 45px;
+        line-height: 45px;
+        position: relative;
+        top: -2px;
+        text-align: center;
+        background-color: #fff;
+        margin-right: 5px;
+        box-shadow: 0 3px 5px 0 rgba(#000, 0.2);
+
+        @include phone() {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+    }
+
+    & label:last-child {
+        margin-right: 0;
+    }
+
+    & input {
+        position: absolute;
+        left: -9999px;
+    }
+
+    &__img {
+        height: 470px;
+        width: 290px;
+        background: no-repeat center/cover;
+
+        @include laptop {
+            width: 160px;
+        }
+
+        @include phone {
+            width: 100%;
+            max-width: 330px;
+            height: 405px;
+            margin: 0 auto;
+        }
+
+        &--main {
+            background-image: url('../img/services/tabs/tab-1.jpg');
+        }
+
+        &--repair {
+            background-image: url('../img/services/tabs/tab-2.jpg');
+        }
+    }
+
+    &__left {
+        margin-right: 50px;
+
+        @include laptop() {
+            margin-right: 10px;
+        }
+
+        @include phone() {
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__right {
+        background-color: #fff;
+        padding: 30px 40px;
+
+        @include phone() {
+            padding: 20px;
+        }
+    }
+
+    &__heading {
+        font-size: $ts-medium;
+        color: $text-dark;
+        margin-bottom: 30px;
+    }
+
+    &__subheading {
+        color: $acsent-b;
+        font-size: $ts-sh;
+        margin-bottom: 15px;
+    }
+
+    &__items-list {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: $ts-small;
+            line-height: 1.4;
+        }
+    }
+
+    &__items-item {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+#tab_1:checked  ~ .tabs__nav #tab_l1,
+#tab_2:checked  ~ .tabs__nav #tab_l2,
+#tab_3:checked  ~ .tabs__nav #tab_l3 {
+	background: $acsent-b;
+    border-color: #fff;
+    color: #fff;
+	top: 0;
+    z-index: 3;
+    box-shadow: none;
+}
+
+.tabs_cont {
+	position: relative;
+	z-index: 2;
+}
+
+.tabs_cont > div {
+    display: flex;
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	opacity: 0;
+	-moz-transition: opacity .5s ease-in-out;
+	-webkit-transition: opacity .5s ease-in-out;
+	transition: opacity .5s ease-in-out;
+}
+
+#tab_1:checked ~ .tabs_cont #tab_c1,
+#tab_2:checked ~ .tabs_cont #tab_c2,
+#tab_3:checked ~ .tabs_cont #tab_c3 {
+	position: static;
+	left: 0;
+    opacity: 1;
+    
+    @include phone() {
+        display: flex;
+        flex-direction: column;
+    }
+}
+

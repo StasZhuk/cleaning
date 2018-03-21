@@ -1,0 +1,19 @@
+extends ../_template-cleaning-apartments
+
+block variables
+  - var title = 'Уборка квартир'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/cleaning/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  +hero-cleaning(hero.appartments, 'appartments') 
+  +tabs(tabs.appartments) 
+  +coast(coast.appartments)
+  +whyWe(whyWe.appartments)
+  +opinions(opinions.appartments)
+  +slider(slider.appartments, 'appartments')
+  include ./appartments-cleaning/_cleaning
+  include ../common/sections/_numbers

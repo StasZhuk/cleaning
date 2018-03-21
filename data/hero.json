@@ -1,0 +1,38 @@
+{
+    "homes" : {
+        "title" : "Профессиональная уборка домов",
+        "imgSrc" : "../assets/img/services/homes-cleaning-bg.jpg"
+    },
+    "appartments" : {
+        "title" : "Профессиональная уборка квартир",
+        "imgSrc" : "../assets/img/services/appartments-cleaning-bg.jpg"
+    },
+    "offices" : {
+        "title" : "Профессиональная уборка офисов",
+        "imgSrc" : "../assets/img/services/offices-cleaning-bg.jpg"
+    },
+    "general" : {
+        "title" : "Генеральная уборка помещений",
+        "imgSrc" : "../assets/img/services/general-cleaning-bg.jpg"
+    },
+    "repair" : {
+        "title" : "Профессиональная уборка после ремонта",
+        "imgSrc" : "../assets/img/services/after-repair-cleaning-bg.jpg"
+    },
+    "windows" : {
+        "title" : "Профессиональная мойка окон",
+        "imgSrc" : "../assets/img/services/after-repair-cleaning-bg.jpg"
+    },
+    "carpet" : {
+        "title" : "Химчистка ковров",
+        "imgSrc" : "../assets/img/services/carpet-cleaning-bg.jpg"
+    },
+    "semiCarpet" : {
+        "title" : "Химчистка ковролина",
+        "imgSrc" : "../assets/img/services/semi-carpet-cleaning-bg.jpg"
+    },
+    "furniture" : {
+        "title" : "Химчистка мягкой мебели",
+        "imgSrc" : "../assets/img/services/soft-furniture-cleaning-bg.jpg"
+    }
+}

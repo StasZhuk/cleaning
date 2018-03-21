@@ -3,17 +3,37 @@ window.addEventListener('DOMContentLoaded', function() {
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
+        responsive: [
+            {
+              breakpoint: 1120,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 3,
+              }
+            },
+            {
+              breakpoint: 930,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 740,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 545,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
     });
-
-    //Accordion
-    (function() {
-        $('.accordion .accordion__title').on('click', function() {
-            $('.accordion .accordion__content').not($(this).next()).slideUp(500);
-            $('.accordion .accordion__title').not($(this)).removeClass('active');
-            $(this).next().slideToggle(500);
-            $(this).toggleClass('active');
-        });
-    })();
 
     //Opinions
     (function() {
@@ -36,5 +56,4 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     })();
-
 });

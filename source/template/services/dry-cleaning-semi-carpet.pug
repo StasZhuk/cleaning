@@ -1,0 +1,17 @@
+extends ../_template-dry-cleaning-semi-carpet
+
+block variables
+  - var title = 'Химчистка ковролина'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/cleaning/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  +hero-cleaning(hero.semiCarpet, 'semi-carpet') 
+  +whyWe(whyWe.semiCarpet)
+  +opinions(opinions.semiCarpet)
+  +slider(slider.semiCarpet, 'semi-carpet')
+  include ./dry-cleaning-semi-carpet/_cleaning
+  include ../common/sections/_numbers

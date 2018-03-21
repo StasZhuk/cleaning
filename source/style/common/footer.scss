@@ -2,9 +2,18 @@
     padding: 30px 0;
     border-top: 1px solid $grey;
 
+    @include laptop() {
+        background-color: $grey;
+        padding-bottom: 0;
+    }
+
     .container {
         display: flex;
         flex-wrap: wrap;
+
+        @include laptop() {
+            padding: 0;
+        }
     }
 
     &__left {
@@ -13,6 +22,29 @@
         justify-content: space-between;
         color: $acsent-b;
         padding: 0 30px;
+
+        @include laptop() {
+            flex-direction: column;
+            padding-bottom: 40px;
+
+            .list {
+                    background-color: #fff;
+                    padding: 20px 30px 30px;
+
+                    &__title {
+                        margin-bottom: 10px;
+                        padding-left: 20px;
+                    }
+            }
+
+            .footer__col {
+                margin-bottom: 40px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
     }
 
     &__right {
@@ -22,18 +54,49 @@
         padding-left: 20px;
         border-left: 1px solid $grey;
         text-align: right;
+
+        @include desktop() {
+            padding-top: 40px;
+            padding-left: 0;
+        }
+
+        @include laptop() {
+            background-color: #fff;
+        }
+    }
+
+    &__left,
+    &__right {
+        @include desktop() {
+            width: 100%;
+        }
     }
 
     .list__item {
         margin-bottom: 20px;
         font-family: $LatoM;
         font-weight: bold;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     .list__link {
         display: flex;
         align-items: center;
         color: $text-dark;
         font-size: 1.7rem;
+
+        .icon {
+            transform-origin: center left;
+            transition: transform 0.3s;
+        }
+
+        &:hover {
+            .icon {
+                transform: scale(-1);
+            }
+        }
     }
 
     .list__title {
@@ -47,6 +110,23 @@
         justify-content: flex-end;
         margin-bottom: 5px;
         font-size: 1.7rem;
+
+        @include desktop() {
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        @include xsm() {
+            max-width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+
+            span {
+                text-align: left;
+                max-width: 160px;
+                line-height: 1.2;
+            }
+        }
     }
 
     .phone {
@@ -56,6 +136,15 @@
         color: $text-dark;
         font-size: 26px;
         margin-bottom: 25px;
+
+        @include desktop() {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        @include laptop() {
+            margin-bottom: 60px;
+        }
     }
 
     .btn__wrap {
@@ -63,11 +152,25 @@
         margin-left: auto;
         text-transform: uppercase;
         margin-bottom: auto;
+
+        @include desktop() {
+           margin-right: auto;
+           margin-bottom: 30px;
+        }
+
+        @include laptop() {
+            margin-bottom: 100px;
+        }
     }
 
     .btn {
         padding: 15px;
         font-size: $ts-normal;
+
+        @include phone() {
+            background-color: $acsent-b;
+            color: #fff;
+        }
     }
 }
 
@@ -81,6 +184,16 @@
     width: 100%;
     text-align: right;
     padding-top: 30px;
+
+    @include desktop() {
+        text-align: center;
+    }
+
+    @include laptop() {
+        background-color: #fff;
+        padding-bottom: 40px;
+    }
+    
     a {
         display: inline-block;
         color: $text-dark;

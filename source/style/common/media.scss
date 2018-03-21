@@ -1,0 +1,59 @@
+.laptop-trigger {
+    display: none;
+
+    @include laptop() {
+        display: block;
+    }
+
+    &--flex {
+        @include laptop() {
+            display: flex;
+        } 
+    }
+
+    &-hide {
+        @include laptop() {
+            display: none;
+        }
+    }
+}
+
+.desktop-trigger {
+    display: none;
+
+    @include desktop() {
+        display: block;
+    }
+
+    &--flex {
+        @include desktop() {
+            display: flex;
+        } 
+    }
+
+    &-hide {
+        @include desktop() {
+            display: none;
+        }
+    }
+}
+
+.phone-trigger {
+    display: none;
+
+    @include phone() {
+        display: block;
+    }
+
+    &--flex {
+        @include phone() {
+            display: flex;
+        } 
+    }
+
+    &-hide {
+        @include phone() {
+            display: none;
+        }
+    }
+}

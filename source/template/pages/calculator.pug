@@ -1,0 +1,14 @@
+extends ../_template-second
+
+block variables
+  - var title = 'Калькулятор'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/calculator/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  include ../common/sections/_calculator
+  include ../common/sections/_what-in-cleaning
+  include ../common/sections/_numbers

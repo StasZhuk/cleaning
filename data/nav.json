@@ -1,0 +1,21 @@
+{
+    "navLeft": {
+        "appartments-cleaning.html" : "Уборка квартир",
+        "homes-cleaning.html" : "Уборка домов",
+        "offices-cleaning.html" : "Уборка офисов",
+        "general-cleaning.html" : "Генеральная уборка",
+        "cleaning-after-repair.html" : "Уборка после ремонта",
+        "windows-washing.html" : "Мойка окон",
+        "dry-cleaning-semi-carpet.html" : "Химчистка ковролина",
+        "dry-cleaning-soft-furniture.html" : "Химчистка мягкой мебели",
+        "dry-cleaning-carpet.html" : "Химчистка ковров"
+    },
+    "navRight": {
+        "examples-work.html" : "Примеры работ",
+        "calculator.html" : "Калькулятор",
+        "contacts.html" : "Контакты",
+        "articles.html" : "Статьи",
+        "opinions.html" : "Отзывы",
+        "ask-answer.html" : "Вопрос-ответ"
+    }
+}

@@ -1,0 +1,17 @@
+extends ../_template-dry-cleaning-soft-furniture
+
+block variables
+  - var title = 'Химчистка мягкой мебели'
+  - var foundation_js= '../assets/js/foundation.js' 
+  - var app_js= '../assets/js/app.js' 
+  - var customScript= '../assets/js/cleaning/index.js' 
+  - var app_css= '../assets/css/app.css' 
+  - var foundation_css= '../assets/css/foundation.css' 
+
+block content
+  +hero-cleaning(hero.furniture, 'soft-furniture') 
+  +whyWe(whyWe.furniture)
+  +opinions(opinions.furniture)
+  +slider(slider.furniture, 'soft-furniture')
+  include ./dry-cleaning-soft-furniture/_cleaning
+  include ../common/sections/_numbers

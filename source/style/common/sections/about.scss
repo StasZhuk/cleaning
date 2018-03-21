@@ -1,6 +1,17 @@
 .about {
     background-color: $grey;
 
+    @include laptop() {
+        .list {
+            display: block;
+        }
+
+        .list__item {
+            width: 100%;
+            padding-bottom: 10px;
+        }
+    }
+
     p {
         font-size: $ts-sh;
         line-height: 24px;;

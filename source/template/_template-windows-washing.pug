@@ -1,0 +1,14 @@
+include common/_mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+  include common/_generals
+
+  body
+      +header('./', '../pages/', nav, 'Мойка окон', 'sub')
+      
+      //- основной контент
+      block content
+
+      include ./common/_footer-second
